@@ -15,16 +15,22 @@ $compte1 = new Compte("Benoit", 500);
 // $compte1->solde = 500;
 // $compte2->solde = 2400.50;
 
+
 //on dépose 100 euros
 $compte1->deposer(100);
 
-$compte1->retirer(200);
+$compte1->retirer(500);
 
 $compte1->setTitulaire("Marco polo");
+
+$compte1->interet();
 
 var_dump($compte1);
 // var_dump($compte2);
 ?>
 <p><?= $compte1->voirSolde() ?></p>
 
+
 <?php
+
+echo $compte1;

@@ -19,6 +19,15 @@ class Compte
      */
     private $solde;
 
+    //Constante
+    const TAUX_INTERETS = 5;
+
+    public function interet()
+    {
+        echo "le taux d'interet du compte est : " . self::TAUX_INTERETS . "%";
+    }
+
+
 
     /**
      * Constructeur du compte bancaire
@@ -33,6 +42,9 @@ class Compte
 
         //on attribue le montant à la propriété solde de l'instance créée
         $this->solde = $montant;
+
+        //solde avec taux d'interet
+        $this->solde = $montant + ($montant * self::TAUX_INTERETS / 100);
     }
 
     //accesseur
@@ -84,6 +96,14 @@ class Compte
         }
     }
 
+    private function decouvert()
+    {
+        if ($this->solde < 0) {
+            return "Vous êtes à decouvert <br>";
+        } else {
+            return "Opération autorisée <br>";
+        }
+    }
 
     /**
      * Déposer de l'argent sur le compte
@@ -97,6 +117,7 @@ class Compte
         if ($montant > 0) {
             $this->solde += $montant;
         }
+        echo $this->decouvert();
     }
 
     /**
@@ -113,6 +134,7 @@ class Compte
         } else {
             echo "Montant invalide ou solde insuffisant";
         }
+        echo $this->decouvert();
     }
 
     /**
@@ -123,5 +145,10 @@ class Compte
     public function voirSolde()
     {
         return "Le solde du compte est de <strong>$this->solde</strong> euros";
+    }
+
+    public function __toString()
+    {
+        return "Vous êtes sur le compte bancaire de $this->titulaire, et le solde est de $this->solde euros";
     }
 }
