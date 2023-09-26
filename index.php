@@ -20,6 +20,8 @@ $compte1->deposer(100);
 
 $compte1->retirer(200);
 
+$compte1->setTitulaire("Marco polo");
+
 var_dump($compte1);
 // var_dump($compte2);
 ?>

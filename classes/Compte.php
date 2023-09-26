@@ -10,14 +10,14 @@ class Compte
      *
      * @var string
      */
-    public $titulaire;
+    private $titulaire;
 
     /**
      * Solde du compte bancaire
      *
      * @var float
      */
-    public $solde;
+    private $solde;
 
 
     /**
@@ -34,6 +34,56 @@ class Compte
         //on attribue le montant à la propriété solde de l'instance créée
         $this->solde = $montant;
     }
+
+    //accesseur
+
+    /**
+     * Retourne la valeur du titulaire du compte
+     *
+     * @return string
+     */
+    public function getTitulaire(): string
+    {
+        return $this->titulaire;
+    }
+    /**
+     * Retourne la valeur du solde du compte
+     *
+     * @return float
+     */
+    public function getSolde(): float
+    {
+        return $this->solde;
+    }
+
+    //setter
+    /**
+     * Modifie le nom du titulaire et retourne l'objet
+     *
+     * @param string $nom Nom du titulaire
+     * @return Compte Compte bancaire
+     */
+    public function setTitulaire(string $nom): self
+    {
+        if ($nom != "") {
+            $this->titulaire = $nom;
+            return $this;
+        }
+    }
+    /**
+     * Modifie le solde du titulaire et retourne l'objet
+     *
+     * @param float $montant Montant du compte
+     * @return Compte Compte bancaire
+     */
+    public function setSolde(float $montant): self
+    {
+        if ($montant >= 0) {
+            $this->solde = $montant;
+            return $this;
+        }
+    }
+
 
     /**
      * Déposer de l'argent sur le compte
