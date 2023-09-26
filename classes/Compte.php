@@ -17,7 +17,7 @@ abstract class Compte
      *
      * @var float
      */
-    private $solde;
+    protected $solde;
 
 
     /**
