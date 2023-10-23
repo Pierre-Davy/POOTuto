@@ -21,6 +21,22 @@ class AnnoncesController extends Controller
 
         //On génère la vue        
         $this->render('annonces/index', ['annonces' => $annonces]);
-        
+    }
+    /**
+     * Affiche une annonce
+     *
+     * @param integer $id
+     * @return void
+     */
+    public function lire(int $id)
+    {
+        // On instancie le Model
+        $annoncesModel = new AnnoncesModel;
+
+        // On va chercher une annonce
+        $annonce = $annoncesModel->find($id);
+
+        // On envoie à la vue
+        $this->render('annonces/lire', ['annonces' => $annonce]);
     }
 }
