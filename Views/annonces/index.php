@@ -2,7 +2,7 @@
 
 <?php foreach ($annonces as $annonce) : ?>
     <article>
-        <h2><a href="TUTO_PHP_WAMP/POOTuto/Public/annonces/lire/<?= $annonce->id ?>"><?= $annonce->titre ?></a></h2>
+        <h2><a href="annonces/lire/<?= $annonce->id ?>"><?= $annonce->titre ?></a></h2>
         <p><?= $annonce->description ?></p>
     </article>
 <?php endforeach;

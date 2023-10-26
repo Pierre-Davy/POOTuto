@@ -14,21 +14,17 @@ class Autoloader
 
     static function autoload($class)
     {
-        //on récupère dans $class la totalité du namespace de la classe concernée
-        //on retire App\
+        // On récupère dans $class la totalité du namespace de la classe concernée (App\Client\Compte)
+        // On retire App\ (Client\Compte)
         $class = str_replace(__NAMESPACE__ . '\\', '', $class);
 
-        //on remplace les \ par des /
+        // On remplace les \ par des /
         $class = str_replace('\\', '/', $class);
 
         $fichier = __DIR__ . '/' . $class . '.php';
-
-        //on verifie si le fichier existe
+        // On vérifie si le fichier existe
         if (file_exists($fichier)) {
             require_once $fichier;
-        } else {
-            echo "Une erreur interne est survenue";
-            die;
         }
     }
 }

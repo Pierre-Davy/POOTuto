@@ -20,7 +20,7 @@ class AnnoncesController extends Controller
         $annonces = $annoncesModel->findBy(["actif => 1"]);
 
         //On génère la vue        
-        $this->render('annonces/index', ['annonces' => $annonces]);
+        $this->render('annonces/index', compact('annonces'));
     }
     /**
      * Affiche une annonce
@@ -37,6 +37,6 @@ class AnnoncesController extends Controller
         $annonce = $annoncesModel->find($id);
 
         // On envoie à la vue
-        $this->render('annonces/lire', ['annonces' => $annonce]);
+        $this->render('annonces/lire', compact('annonce'));
     }
 }

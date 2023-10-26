@@ -1,5 +1,5 @@
 <article>
-    <h1><a href="TUTO_PHP_WAMP/POOTuto/Public/annonces/lire/<?= $annonce->id ?>"><?= $annonce->titre ?></a></h1>
+    <h1><?= $annonce->titre ?></h1>
     <div><?= $annonce->description ?></div>
-    <div><?= $annonce->date ?></div>
+    <div><?= $annonce->created_at ?></div>
 </article>
