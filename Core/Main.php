@@ -9,8 +9,11 @@ use App\Controllers\MainController;
  */
 class Main
 {
+
+
     public function start()
     {
+
         // On démarre la session
         session_start();
 

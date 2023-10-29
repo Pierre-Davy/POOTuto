@@ -2,28 +2,27 @@
 
 namespace App\Core;
 
-//on importe PDO
+// On "importe" PDO
 use PDO;
 use PDOException;
 
-
 class Db extends PDO
 {
-    //instance unique de la class
+    // Instance unique de la classe
     private static $instance;
 
-    //Informations de connection
+    // Informations de connexion
     private const DBHOST = 'localhost';
-    private const DBNAME = 'tutopoo';
     private const DBUSER = 'root';
     private const DBPASS = '';
+    private const DBNAME = 'tutopoo';
 
     private function __construct()
     {
-        //dsn de construction
-        $_dsn = 'mysql:host=' . self::DBHOST . ';dbname=' . self::DBNAME;
+        // DSN de connexion
+        $_dsn = 'mysql:dbname=' . self::DBNAME . ';host=' . self::DBHOST;
 
-        //On appelle le constructeur de la class PDO
+        // On appelle le constructeur de la classe PDO
         try {
             parent::__construct($_dsn, self::DBUSER, self::DBPASS);
 
@@ -34,6 +33,7 @@ class Db extends PDO
             die($e->getMessage());
         }
     }
+
 
     public static function getInstance(): self
     {

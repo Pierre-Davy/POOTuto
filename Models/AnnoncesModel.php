@@ -2,8 +2,6 @@
 
 namespace App\Models;
 
-
-
 class AnnoncesModel extends Model
 {
     protected $id;
@@ -11,10 +9,10 @@ class AnnoncesModel extends Model
     protected $description;
     protected $created_at;
     protected $actif;
+    protected $users_id;
 
     public function __construct()
     {
-
         $this->table = 'annonces';
     }
 
@@ -101,7 +99,7 @@ class AnnoncesModel extends Model
     /**
      * Get the value of actif
      */
-    public function getActif()
+    public function getActif(): int
     {
         return $this->actif;
     }
@@ -111,9 +109,29 @@ class AnnoncesModel extends Model
      *
      * @return  self
      */
-    public function setActif($actif)
+    public function setActif(int $actif)
     {
         $this->actif = $actif;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of users_id
+     */
+    public function getUsers_id(): int
+    {
+        return $this->users_id;
+    }
+
+    /**
+     * Set the value of users_id
+     *
+     * @return  self
+     */
+    public function setUsers_id(int $users_id)
+    {
+        $this->users_id = $users_id;
 
         return $this;
     }

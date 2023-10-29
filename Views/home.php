@@ -18,13 +18,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/TUTO_PHP_WAMP/POOTuto/Public/main">Accueil</a>
+                        <a class="nav-link" aria-current="page" href="/main">Accueil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/TUTO_PHP_WAMP/POOTuto/Public/annonces">Liste des annonces</a>
+                        <a class="nav-link" href="/annonces">Liste des annonces</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/TUTO_PHP_WAMP/POOTuto/Public/users/login">Me connecter</a>
+                        <a class="nav-link" href="/users/login">Me connecter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/users/register">M'inscrire</a>
                     </li>
 
                 </ul>
